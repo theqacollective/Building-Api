@@ -1,16 +1,11 @@
 package com.qa.accommodation.buildingAPI.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import org.springframework.data.annotation.Id;
 
-
-@Entity
 public class Building {
 	
 	@Id
-	@GeneratedValue
-	private long id;
+	private String id;
 	
 	private String buildingName;
 	private String buildingLocation;
@@ -32,7 +27,7 @@ public class Building {
 		this.ownerEmail = ownerEmail;
 	}
 	
-	public long getId() {
+	public String getId() {
 		return id;
 	}
 	
