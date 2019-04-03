@@ -11,6 +11,13 @@ import com.qa.accommodation.buildingAPI.entities.Building;
 import com.qa.accommodation.buildingAPI.entities.BuildingBuilder;
 
 public class Constants {
+	public static final String CREATE_URL = "/createBuilding";
+	public static final String DELETE_URL = "/deleteBuilding";
+	public static final String UPDATE_URL = "/updateBuilding/{buildingName}";
+	public static final String GET_ALL_URL = "/getAllBuildings";
+	public static final String SEARCH_URL = "/buildingSearch";
+	
+	
 	private static final String DELETE_SUCCESS = "Successfully Deleted";
 	private static final String CREATE_SUCCESS = "Building has been successfully created";
 	
@@ -22,7 +29,8 @@ public class Constants {
 	private final static String TEST_OWNER_NAME = "Test Owner";
 	private final static String TEST_OWNER_NUMBER = "07778889991";
 	private final static String TEST_OWNER_EMAIL = "TestOwner@Tester.com";
-	
+	private final static String NA_STRING = "N/A";
+	private static final String UPDATE_MESSSAGE = "Entry updated";
 	private final static Building CONSTRUCTED_BUILDING = new Building(TEST_BUILDING_NAME, TEST_BUILDING_LOCATION,
 			TEST_OWNER_NAME, TEST_OWNER_NUMBER, TEST_OWNER_EMAIL);
 	public static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
@@ -43,12 +51,16 @@ public class Constants {
 		return BUILDING_BUILDER;
 	}
 	public static Building getConstructedBuilding() {
-		// TODO Auto-generated method stub
 		return CONSTRUCTED_BUILDING;
 	}
 	public static String getBuildingCreated() {
-		// TODO Auto-generated method stub
 		return "building created";
+	}
+	public static String getNaString() {
+		return NA_STRING;
+	}
+	public static String getUpdateMesssage() {
+		return UPDATE_MESSSAGE;
 	}
 	
 	
