@@ -40,8 +40,8 @@ public class BuildingController {
 	}
 	
 	@DeleteMapping("/deleteBuilding")
-	public String deleteBuilding(String buildingName, String buildingLocation, String ownerName) {
-		List<Building> buildings = this.buildingSearch(buildingName, buildingLocation, ownerName);
+	public String deleteBuilding(@RequestBody Building building) {
+		List<Building> buildings = this.buildingSearch(building.getBuildingName(), building.getBuildingLocation(), building.getOwnerName());
 		for(int i = 0; i < buildings.size(); i++) {
 			this.buildingService.deleteBuilding(buildings.get(i));
 		}
