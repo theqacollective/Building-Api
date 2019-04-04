@@ -6,5 +6,5 @@ RUN mvn clean package
 
 FROM openjdk:8
 COPY --from=build /build/target/BuildingAPI-0.0.1-SNAPSHOT.jar  building.jar
-EXPOSE 8080
+EXPOSE 8084
 ENTRYPOINT ["java","-jar","building.jar"]
