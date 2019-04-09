@@ -33,11 +33,19 @@ public class BuildingService {
 	}
 
 	public String createBuilding(Building building) {
+		if(this.buildingRepo.getBuildingByBuildingName(building.getBuildingName()) != null)
+		{
+			return "Building Already Exists";
+		}
 		this.buildingRepo.save(building);
 		return Constants.getCreateSuccess();
 	}
 
 	public String deleteBuilding(Building building) {
+		if(this.buildingRepo.getBuildingByBuildingName(building.getBuildingName()) == null)
+		{
+			return "Building Does Not Exist";
+		}
 		this.buildingRepo.delete(building);
 		return Constants.getDeleteSuccess();
 	}
